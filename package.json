@@ -1,0 +1,16 @@
+{
+  "name": "lakhdaracadimy",
+  "version": "1.0.0",
+  "description": "web application for edu",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": " latest ",
+    "express": "latest",
+    "mongodb": "^2.1.7"
+  },
+  "author": "lakhdar benzahia",
+  "license": "ISC"
+}
