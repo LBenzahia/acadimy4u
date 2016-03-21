@@ -2,15 +2,35 @@
   "name": "lakhdaracadimy",
   "version": "1.0.0",
   "description": "web application for edu",
-  "main": "Server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ejs": " latest ",
-    "express": "latest",
-    "mongodb": "^2.1.7"
-  },
+    "connect": "^3.4.1",
+    "connect-flash": "^0.1.1",
+    "ejs" : "~0.8.5",
+    "express" : "~4.0.0",
+    "mongodb": "^2.1.7",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "debug": "~2.2.0",
+    "jade": "~1.9.2",
+    "morgan": "~1.5.3",
+    "serve-favicon": "~2.2.1",
+    "mongodb": "*",
+    "mongoose": "*",
+    "express-validator": "*",
+    "express-session": "~1.0.0",
+    "express-messages": "*",
+    "passport-http": "*",
+    "passport-local" : "~0.1.6",    
+    "passport-facebook" : "~1.0.2", 
+    "passport-twitter" : "~1.0.2",  
+    "passport-google-oauth" : "~0.1.5",
+    "bcrypt-nodejs" : "latest",
+    "method-override": "~1.0.0"
+},
   "author": "lakhdar benzahia",
   "license": "ISC"
 }
