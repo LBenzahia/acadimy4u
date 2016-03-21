@@ -1,6 +1,6 @@
-# lakbacadimy 
+# lakbacademy 
 
-lakbacadimy is a web plateform for education 
+lakbacademy is a web plateform for education 
 
-# lakbacadimy
+# lakbacademy
 # acadimy4u
