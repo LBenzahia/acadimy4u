@@ -13,6 +13,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+//var nunjucks     = require('nunjucks');
 
 var configDB = require('./config/database.js');
 
@@ -26,8 +27,13 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
+app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
+/*nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+}); // set up nunjucks for templating*/
 
 // required for passport
 app.use(session({ secret: 'hiwelcometoyouonlakhdaracademy' })); // session secret
@@ -36,10 +42,18 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
-// case of 404 page note found 
+
+require('./welcome_app/routes.js')(app);
+require('./app_auth/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
+// case of 404 page note found
 app.use("*",function(req,res){
-  res.render('ViewsApp/404.ejs');
+  var pagenotfound = 'Page not found';
+  res.render('welcomeApp/404.ejs',{
+    title : pagenotfound
+  }
+
+);
 });
 // launch ======================================================================
 app.listen(port);

@@ -8,7 +8,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 // load up the user model
-var User = require('../app/models/user');
+var User = require('../app_auth/models/user');
 
 // load the auth variables
 var configAuth = require('./auth');
