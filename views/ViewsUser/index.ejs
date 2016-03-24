@@ -2,34 +2,78 @@
 <!doctype html>
 <html>
 <head>
-    <title>Lakhdar academy</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+    <% include ../partials/head %>
     <style>
-        body        { padding-top:80px; }
+
+    #form1{
+
+      /* test */
+
+    background-color: #f7f7f7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    width: 330px;
+    height: 335px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    align-content: center;
+
+    }
+    #form1 a {
+
+      cursor: pointer;
+      outline: 0px;
+      width: 240px;
+      height: 35px;
+      font-size: 1.2em;
+      align-content: center;
+      margin : 0px;
+      margin-top: 30px;
+
+    }
+
+
     </style>
 </head>
 <body>
-<div class="container">
+  <header id="header">
+  <% include ../partials/header %>
+  </header>
+<div class="row">
 
 
-  
 
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-book"></span> Lakhdar Academy</h1>
 
-        <p>Login or Register with:</p>
+    <div class="row" id="form1">
 
+        <h2><span class="fa fa-book active"></span> Lakhdar Academy</h2>
+
+        <p>Login or Register with Social Media:</p>
+        <a  id="google"href="/auth/google" class="btn btn-danger">
+          <span class="fa fa-google-plus"></span> Sign in with Google
+        </a>
+        <br />
+        <a id="facebook" href="/auth/facebook" class="btn btn-primary">
+          <span class="fa fa-facebook"></span> Sign in with Facebook
+        </a>
+
+
+
+        <!--
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a><br />
-        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-        <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+      -->
 
 
     </div>
-   
+
 
 </div>
 </body>
 </html>
-

@@ -10,6 +10,7 @@
                             <li><a href="https://www.facebook.com/LakhdarAcademy"target="_blank"><i class="fa fa-google-plus"></i></a></li>
                             <li><a href="https://www.facebook.com/LakhdarAcademy"target="_blank"><i class="fa fa-dribbble"></i></a></li>
                             <li><a href="https://www.facebook.com/LakhdarAcademy"target="_blank"><i class="fa fa-linkedin"></i></a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -26,23 +27,28 @@
                     </button>
 
                     <a class="navbar-brand" href="/">
-                    	<h1><img src="../../images/logo.png" alt="logo"></h1>
+                    	<h1>LAKHDAR ACADEMY</h1>
+
                     </a>
 
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li class="active"><a href="#">About us</a></li>
+                        <li class="active"><a href="http://localhost:8080">Home</a></li>
+                        <li class="active"><a href="http://localhost:8080/about">About us</a></li>
                         <li class="active"><a href="#">Blog</a></li>
-                        <li class="active"><a href="http://localhost:8080/auth_api">Login</a></li>
-                        <li class="active"><a href="http://localhost:8080/auth_api">SIGN UP</a></li>
 
+                        <% if (user) { %>
 
+                          <li class="active"><a href="http://localhost:8080/profile">dashboard</a></li>
+                        <% } else { %>
+                          <li class="active"><a href="http://localhost:8080/auth_api">Login</a></li>
+                          <li class="active"><a href="http://localhost:8080/auth_api">SIGN UP</a></li>
+                        <% } %>
 
                     </ul>
                 </div>
-                <div class="search">
+                <div class="search"> <!--i have a bug here with SIGNUP page -->
                     <form role="form">
                         <i class="fa fa-search"></i>
                         <div class="field-toggle">

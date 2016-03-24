@@ -2,24 +2,15 @@ module.exports = function(app, passport) {
 
 // normal routes ===============================================================
 
-    // show the home page (will also have our login links)
+    // show the auth welcome page (will also have our login links)
     app.get('/auth_api', function(req, res) {
-        res.render('ViewsUser/index.ejs');
-    });
-
-    // PROFILE SECTION =========================
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('ViewsUser/profile.ejs', {
-            user : req.user
-
+      var title = 'auth_api';
+        res.render('ViewsUser/index.ejs',{
+          title: title,
+          user: req.user
         });
     });
 
-    // LOGOUT ==============================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
@@ -88,6 +79,18 @@ module.exports = function(app, passport) {
                 successRedirect : '/profile',
                 failureRedirect : '/'
             }));
+  // PROFILE SECTION ===========================================================
+            app.get('/profile', isLoggedIn, function(req, res) {
+                res.render('ViewsUser/profile.ejs', {
+                    user : req.user
+
+                });
+            });
+  // LOGOUT ====================================================================
+            app.get('/logout', function(req, res) {
+                req.logout();
+                res.redirect('/');
+            });
 
 // =============================================================================
 // AUTHORIZE (ALREADY LOGGED IN / CONNECTING OTHER SOCIAL ACCOUNT) =============
@@ -191,6 +194,7 @@ module.exports = function(app, passport) {
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
+
 
     res.redirect('/');
 }

@@ -10,7 +10,8 @@ module.exports = function(app){
         var title = 'Welcome to ';
 
     	res.render('welcomeApp/index.ejs',{
-               title:title
+               title:title,
+               user : req.uer
         }
 
             );
@@ -20,7 +21,10 @@ module.exports = function(app){
     app.get('/about', function(req, res){
 
         var title = 'LA|About';
-    	res.render('welcomeApp/about.ejs', {title:title});
+    	res.render('welcomeApp/about.ejs', {
+        title:title,
+        user: req.user
+      });
     });
 
     // show contact page =======================================================
@@ -53,5 +57,5 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
 
-    res.redirect('/');
+   res.redirect('/');
 }

@@ -1,14 +1,19 @@
 // app/models/user.js
 // load the things we need
 var mongoose = require('mongoose');
+var relationship = require("mongoose-relationship");
 var bcrypt   = require('bcrypt-nodejs');
+var Profile = require('../../user_manager/models/profile');//this for define one to one
 
 // define the schema for our user model
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
+
 var userSchema = mongoose.Schema({
 
     local            : {
-        email        : String,
-        password     : String,
+        email        : { type: String, required: true, unique: true },
+        password     : { type: String, required: true }
     },
     facebook         : {
         id           : String,
@@ -21,14 +26,29 @@ var userSchema = mongoose.Schema({
         id           : String,
         token        : String,
         displayName  : String,
-        username     : String
+        username     : String,
+        img          : String
     },
     google           : {
         id           : String,
         token        : String,
         email        : String,
-        name         : String
-    }
+        name         : String,
+        img          : String
+    },
+    id_profile       :{ type: ObjectId, ref:"Profile" }, //one to one
+    fullName: {
+      firstName: String,
+      lastName: String
+    },
+    admin: Boolean,
+    location: String,
+    meta: {
+          age   : Number,
+          birthDte: Date
+  },
+   created_at: Date,
+   updated_at: Date
 
 });
 
