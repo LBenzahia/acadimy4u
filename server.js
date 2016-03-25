@@ -45,7 +45,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 require('./welcome_app/routes.js')(app);
 require('./app_auth/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
-
+require('./user_manager/routes.js')(app, passport);
 // case of 404 page note found
 app.use("*",function(req,res){
   var pagenotfound = 'Page not found';

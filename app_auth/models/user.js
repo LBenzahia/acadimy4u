@@ -12,43 +12,32 @@ var Schema = mongoose.Schema,
 var userSchema = mongoose.Schema({
 
     local            : {
-        email        : { type: String, required: true, unique: true },
-        password     : { type: String, required: true }
+        email        : String,
+        password     : String
     },
     facebook         : {
-        id           : String,
+        id          : String,
         token        : String,
         email        : String,
-        name         : String,
-        img          : String
+        name     : String,
+
     },
     twitter          : {
         id           : String,
         token        : String,
         displayName  : String,
         username     : String,
-        img          : String
+
     },
     google           : {
         id           : String,
         token        : String,
-        email        : String,
-        name         : String,
-        img          : String
+        email       : String,
+        name        : String,
+
     },
-    id_profile       :{ type: ObjectId, ref:"Profile" }, //one to one
-    fullName: {
-      firstName: String,
-      lastName: String
-    },
-    admin: Boolean,
-    location: String,
-    meta: {
-          age   : Number,
-          birthDte: Date
-  },
-   created_at: Date,
-   updated_at: Date
+  id_profile       :{ type: ObjectId, ref:"Profile" } //one to one
+
 
 });
 
