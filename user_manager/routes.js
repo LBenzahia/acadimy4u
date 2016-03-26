@@ -1,6 +1,6 @@
 module.exports = function(app, passport) {
 
-app.get('/dashboard/u/id/',function(req, res) {
+app.get('/dashboard/u/id',function(req, res) {
 
     var title = "dashboard"
      res.render('ViewsUser/dashboard.ejs',{
