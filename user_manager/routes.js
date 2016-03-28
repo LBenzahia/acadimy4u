@@ -8,45 +8,20 @@ app.get('/dashboard/u/:id', PSCtrl.Home);
 
 // public profile Settings route =====================================================
 
-app.get('/dashboard/u/id/profile_settings',function(req, res){
-  var title = "public profile";
-   res.render('ViewsUser/personalSettiings/profileSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/profile_settings', PSCtrl.PublicProfile);
 // account settings route ============================================================
-app.get('/dashboard/u/id/account_settings',function(req, res){
-  var title = "Account";
-   res.render('ViewsUser/personalSettiings/accountSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/account_settings', PSCtrl.Account);
 
 // notifications settings route ======================================================
-app.get('/dashboard/u/id/nt_settings',function(req, res){
-  var title = "Notifications";
-   res.render('ViewsUser/personalSettiings/notificationSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/nt_settings', PSCtrl.Notifications);
 // organization settings route ============================================================
-app.get('/dashboard/u/id/nt_settings',function(req, res){
-  var title = "Notifications";
-   res.render('ViewsUser/personalSettiings/notificationSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/organization_settings', PSCtrl.Organization);
 
 // social accounts settings route ============================================================
-app.get('/dashboard/u/id/sa_settings',function(req, res){
-  var title = "social accounts";
-   res.render('ViewsUser/personalSettiings/saSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/sa_settings', PSCtrl.SocialAcounts);
 
 // security  settings route ============================================================
-app.get('/dashboard/u/id/security_settings',function(req, res){
+app.get('/dashboard/u/:id/security_settings',function(req, res){
   var title = "Security";
    res.render('ViewsUser/personalSettiings/securitySettings.ejs',{
      title:title
