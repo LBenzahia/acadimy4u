@@ -7,7 +7,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-// load up the user model
+// load up the user model profile model
 var User = require('../app_auth/models/user');
 var Profile = require('../user_manager/models/profile');
 // load the auth variables

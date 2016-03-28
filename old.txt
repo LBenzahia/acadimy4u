@@ -1,0 +1,7 @@
+app.get('/dashboard/u/id',function(req, res) {
+
+    var title = "dashboard";
+     res.render('ViewsUser/dashboard.ejs',{
+       title:title
+     });
+  });

@@ -1,14 +1,10 @@
+
+var PSCtrl = require('./controllers/PersonalSettingsCtrl');
 module.exports = function(app, passport) {
 
 // normal routes for Personal Settings==========================================
 // dashboard personal Settings route ===========================================
-app.get('/dashboard/u/id',function(req, res) {
-
-    var title = "dashboard";
-     res.render('ViewsUser/dashboard.ejs',{
-       title:title
-     });
-  });
+app.get('/dashboard/u/:id', PSCtrl.Home);
 
 // public profile Settings route =====================================================
 
