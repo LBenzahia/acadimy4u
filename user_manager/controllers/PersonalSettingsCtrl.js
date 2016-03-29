@@ -42,3 +42,24 @@ exports.SocialAcounts = function(req, res){
      title:title
    });
 };
+// sercurity settings controller================================================
+exports.Security  = function(req, res){
+  var title = "Security";
+   res.render('ViewsUser/personalSettiings/securitySettings.ejs',{
+     title:title
+   });
+};
+// courses settings controller==================================================
+exports.Courses = function(req, res){
+  var title = "courses";
+   res.render('ViewsUser/personalSettiings/coursesSettings.ejs',{
+     title:title
+   });
+};
+// Billing settings controller==================================================
+exports.Billing = function(req, res){
+  var title = "Billing";
+   res.render('ViewsUser/personalSettiings/billingSettings.ejs',{
+     title:title
+   });
+};

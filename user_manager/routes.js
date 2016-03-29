@@ -21,12 +21,7 @@ app.get('/dashboard/u/:id/organization_settings', PSCtrl.Organization);
 app.get('/dashboard/u/:id/sa_settings', PSCtrl.SocialAcounts);
 
 // security  settings route ============================================================
-app.get('/dashboard/u/:id/security_settings',function(req, res){
-  var title = "Security";
-   res.render('ViewsUser/personalSettiings/securitySettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/security_settings',PSCtrl.Security);
 // classroom  settings route ============================================================
 app.get('/dashboard/u/id/cr_settings',function(req, res){
   var title = "Classroom";
@@ -35,20 +30,10 @@ app.get('/dashboard/u/id/cr_settings',function(req, res){
    });
 });
 // courses  settings route ============================================================
-app.get('/dashboard/u/id/courses_settings',function(req, res){
-  var title = "courses";
-   res.render('ViewsUser/personalSettiings/coursesSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/id/courses_settings', PSCtrl.Courses);
 
 // billing settings route ============================================================
-app.get('/dashboard/u/id/billing_settings',function(req, res){
-  var title = "Billing";
-   res.render('ViewsUser/personalSettiings/billingSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/id/billing_settings', PSCtrl.Billing);
 
 
 
