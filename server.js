@@ -3,7 +3,12 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
-var app      = express();
+// create the app and the sub apps
+
+var app      = express();// the main app
+// the sub app
+var adminApp, blogApp, authApp    = express();
+
 var port     = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
