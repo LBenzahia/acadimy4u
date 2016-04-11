@@ -23,12 +23,7 @@ app.get('/dashboard/u/:id/sa_settings', PSCtrl.SocialAcounts);
 // security  settings route ============================================================
 app.get('/dashboard/u/:id/security_settings',PSCtrl.Security);
 // classroom  settings route ============================================================
-app.get('/dashboard/u/:id/cr_settings',function(req, res){
-  var title = "Classroom";
-   res.render('ViewsUser/personalSettiings/classroomSettings.ejs',{
-     title:title
-   });
-});
+app.get('/dashboard/u/:id/cr_settings', PSCtrl.Classroom);
 // courses  settings route ============================================================
 app.get('/dashboard/u/:id/courses_settings', PSCtrl.Courses);
 

@@ -56,6 +56,12 @@ exports.Courses = function(req, res){
      title:title
    });
 };
+// Classroom settings controller
+exports.Classroom = function(req, res){
+
+  var title = "Classroom";
+  res.render('ViewsUser/personalSettiings/classroomSettings.ejs');
+}
 // Billing settings controller==================================================
 exports.Billing = function(req, res){
   var title = "Billing";
