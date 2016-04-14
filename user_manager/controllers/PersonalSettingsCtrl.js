@@ -75,5 +75,10 @@ exports.Billing = function(req, res){
 
 // test our api's
 exports.GetApi = function(req, res){
-      res.json({ message : 'it works fine !'});
+  User.find(function(err, users) {
+        if (err)
+            res.send(err);
+
+        res.json(users);
+    });
 };
