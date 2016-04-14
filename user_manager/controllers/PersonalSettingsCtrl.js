@@ -1,6 +1,6 @@
 // load all our models here
 var User = require('../../app_auth/models/user');
-var User = require('../../user_manager/models/profile');
+var Profile = require('../../user_manager/models/profile');
 // set up all personale settings controllers here
 // dashboard home page controller ================================================
 exports.Home = function(req,res){
