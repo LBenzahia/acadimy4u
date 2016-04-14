@@ -38,7 +38,8 @@ app.get('/dashboard/u/:id/billing_settings', PSCtrl.Billing);
 
 
 
-
+// test our api's
+app.get('/api', PSCtrl.GetApi);
 
 
 // middelware handling

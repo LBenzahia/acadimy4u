@@ -72,3 +72,8 @@ exports.Billing = function(req, res){
      title:title
    });
 };
+
+// test our api's
+exports.GetApi = function(req, res){
+      res.json({ message : 'it works fine !'});
+};
