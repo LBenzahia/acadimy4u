@@ -4,6 +4,7 @@ module.exports = function(app, passport) {
 
 // normal routes for Personal Settings==========================================
 // dashboard personal Settings route ===========================================
+// get's routes
 app.get('/dashboard/u/:id', PSCtrl.Home);
 
 // public profile Settings route =====================================================
@@ -30,6 +31,10 @@ app.get('/dashboard/u/:id/courses_settings', PSCtrl.Courses);
 // billing settings route ============================================================
 app.get('/dashboard/u/:id/billing_settings', PSCtrl.Billing);
 
+// posts methods
+
+
+// delete methods
 
 
 
