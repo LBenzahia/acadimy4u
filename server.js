@@ -9,6 +9,8 @@ var app      = express();// the main app
 // the sub app
 var adminApp, blogApp, authApp    = express();
 
+
+
 var port     = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
