@@ -11,8 +11,8 @@ module.exports = function(app, passport) {
         });
     });
 // PROFILE SECTION ===========================================================
-              app.get('/profile', isLoggedIn, function(req, res) {
-                  res.render('ViewsUser/profile.ejs', {
+              app.get('/dashboard/u/:id', isLoggedIn, function(req, res) {
+                  res.render('ViewsUser/dashboard.ejs', {
                       user : req.user
 
                   });
@@ -63,7 +63,7 @@ module.exports = function(app, passport) {
         // handle the callback after facebook has authenticated the user
         app.get('/auth/facebook/callback',
             passport.authenticate('facebook', {
-                successRedirect : '/profile',
+                successRedirect : '/dashboard/u/:id',
                 failureRedirect : '/'
             }));
 
@@ -88,7 +88,7 @@ module.exports = function(app, passport) {
         // the callback after google has authenticated the user
         app.get('/auth/google/callback',
             passport.authenticate('google', {
-                successRedirect : '/profile',
+                successRedirect : '/dashboard/u/:id',
                 failureRedirect : '/'
             }));
 
@@ -115,7 +115,7 @@ module.exports = function(app, passport) {
         // handle the callback after facebook has authorized the user
         app.get('/connect/facebook/callback',
             passport.authorize('facebook', {
-                successRedirect : '/profile',
+                successRedirect : '/dashboard/u/:id',
                 failureRedirect : '/'
             }));
 
@@ -140,7 +140,7 @@ module.exports = function(app, passport) {
         // the callback after google has authorized the user
         app.get('/connect/google/callback',
             passport.authorize('google', {
-                successRedirect : '/profile',
+                successRedirect : '/dashboard/u/:id',
                 failureRedirect : '/'
             }));
 
@@ -157,7 +157,7 @@ module.exports = function(app, passport) {
         user.local.email    = undefined;
         user.local.password = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/dashboard/u/'+user._id);
         });
     });
 
@@ -166,7 +166,7 @@ module.exports = function(app, passport) {
         var user            = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/dashboard/u/'+user._id);
         });
     });
 
@@ -184,7 +184,7 @@ module.exports = function(app, passport) {
         var user          = req.user;
         user.google.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/dashboard/u/'+user._id);
         });
     });
 

@@ -1,4 +1,5 @@
 
+// load our personal settings controllers  on PSCtrl
 var PSCtrl = require('./controllers/PersonalSettingsCtrl');
 module.exports = function(app, passport) {
 
