@@ -1,4 +1,4 @@
-// app/models/user.js
+// app_auth/models/user.js
 // load the things we need
 var mongoose = require('mongoose');
 var relationship = require("mongoose-relationship");
@@ -36,7 +36,11 @@ var userSchema = mongoose.Schema({
         name        : String,
 
     },
-  id_profile       :{ type: ObjectId, ref:"Profile" } //one to one
+  id_profile       :{ type: ObjectId, ref:"Profile" }, //one to one
+  rules : {
+    IsAdmin : Boolean,
+    IsStuff : Boolean
+  }
 
 
 });
